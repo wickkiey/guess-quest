@@ -12,11 +12,11 @@ from ollama_client import OllamaClient
 class OllamaLLM(LLM):
     """Custom LangChain LLM wrapper for Ollama"""
     
-    client: OllamaClient
-    model: str
+    client: OllamaClient = None
+    model: str = "llama2"
     
     def __init__(self, client: OllamaClient, model: str = "llama2"):
-        super().__init__()
+        super().__init__(client=client, model=model)
         self.client = client
         self.model = model
     

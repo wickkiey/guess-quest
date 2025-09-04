@@ -119,7 +119,7 @@ def main():
     
     # Check connection button
     if st.sidebar.button("🔗 Connect to Ollama"):
-        with st.sidebar.spinner("Connecting to Ollama..."):
+        with st.spinner("Connecting to Ollama..."):
             connected, client, models = check_ollama_connection(ollama_url)
             
             if connected:
